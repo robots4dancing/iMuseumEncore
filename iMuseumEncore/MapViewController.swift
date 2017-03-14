@@ -22,12 +22,33 @@ class MapViewController: UIViewController {
         }
     }
     
+    func annotateMapLocations() {
+        var pinsToRemove = [MKPointAnnotation]()
+        for annotation in museumMapView.annotations {
+            if annotation is MKPointAnnotation {
+                pinsToRemove.append(annotation as! MKPointAnnotation)
+            }
+        }
+        museumMapView.removeAnnotations(pinsToRemove)
+        
+        for museum in self.masterMuseumArray {
+            let museumAnnotation = MKPointAnnotation()
+            print("\(museum.museumName)")
+            print("\(museum.museumLat), \(museum.museumLon)")
+            museumAnnotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(museum.museumLat), longitude: CLLocationDegrees(museum.museumLon))
+            museumAnnotation.title = museum.museumName
+            museumAnnotation.subtitle = museum.museumFullAddress
+            museumMapView.addAnnotation(museumAnnotation)
+        }
+    }
+    
     //MARK: - Life Cycle Methods
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        masterMuseumArray = appDelegate.masterMuseumArray
-        points()
+    override func viewDidAppear(_ animated: Bool) {
+        if masterMuseumArray != appDelegate.masterMuseumArray {
+            masterMuseumArray = appDelegate.masterMuseumArray
+            annotateMapLocations()
+        }
     }
 
     
