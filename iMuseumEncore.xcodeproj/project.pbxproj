@@ -12,6 +12,9 @@
 		4BFB63BB1E78086600A398E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BFB63B91E78086600A398E1 /* Main.storyboard */; };
 		4BFB63BD1E78086700A398E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BFB63BC1E78086700A398E1 /* Assets.xcassets */; };
 		4BFB63C01E78086700A398E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BFB63BE1E78086700A398E1 /* LaunchScreen.storyboard */; };
+		4BFB63C81E78090700A398E1 /* Museum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB63C71E78090700A398E1 /* Museum.swift */; };
+		4BFB63CA1E78096700A398E1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB63C91E78096700A398E1 /* Reachability.swift */; };
+		4BFB63CC1E7809E700A398E1 /* MuseumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB63CB1E7809E700A398E1 /* MuseumTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		4BFB63BC1E78086700A398E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BFB63BF1E78086700A398E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BFB63C11E78086700A398E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BFB63C71E78090700A398E1 /* Museum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Museum.swift; sourceTree = "<group>"; };
+		4BFB63C91E78096700A398E1 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4BFB63CB1E7809E700A398E1 /* MuseumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuseumTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				4BFB63B51E78086600A398E1 /* AppDelegate.swift */,
 				4BFB63B71E78086600A398E1 /* ViewController.swift */,
+				4BFB63C71E78090700A398E1 /* Museum.swift */,
+				4BFB63CB1E7809E700A398E1 /* MuseumTableViewCell.swift */,
+				4BFB63C91E78096700A398E1 /* Reachability.swift */,
 				4BFB63B91E78086600A398E1 /* Main.storyboard */,
 				4BFB63BC1E78086700A398E1 /* Assets.xcassets */,
 				4BFB63BE1E78086700A398E1 /* LaunchScreen.storyboard */,
@@ -138,6 +147,9 @@
 			files = (
 				4BFB63B81E78086600A398E1 /* ViewController.swift in Sources */,
 				4BFB63B61E78086600A398E1 /* AppDelegate.swift in Sources */,
+				4BFB63CC1E7809E700A398E1 /* MuseumTableViewCell.swift in Sources */,
+				4BFB63CA1E78096700A398E1 /* Reachability.swift in Sources */,
+				4BFB63C81E78090700A398E1 /* Museum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
