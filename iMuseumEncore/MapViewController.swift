@@ -13,14 +13,23 @@ class MapViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var masterMuseumArray = [Museum]()
+    var currentMuseum :Museum?
 
     @IBOutlet var museumMapView         :MKMapView!
     
-    func points() {
-        for museum in masterMuseumArray {
-            print("\(museum.museumLon),\(museum.museumLat)")
+    //MARK: - Map Methods
+    
+    func zoomToLocation(lat: Double, lon: Double, radius: Double) {
+        if lat == 0 && lon == 0 {
+            print("Invalid Data")
+        } else {
+            let coord = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+            let viewRegion = MKCoordinateRegionMakeWithDistance(coord, radius, radius)
+            let adjustedRegion = museumMapView.regionThatFits(viewRegion)
+            museumMapView.setRegion(adjustedRegion, animated: true)
         }
     }
+
     
     func annotateMapLocations() {
         var pinsToRemove = [MKPointAnnotation]()
@@ -48,6 +57,10 @@ class MapViewController: UIViewController {
         if masterMuseumArray != appDelegate.masterMuseumArray {
             masterMuseumArray = appDelegate.masterMuseumArray
             annotateMapLocations()
+        }
+        
+        if let museum = currentMuseum {
+            zoomToLocation(lat: museum.museumLat, lon: museum.museumLon, radius: 500)
         }
     }
 

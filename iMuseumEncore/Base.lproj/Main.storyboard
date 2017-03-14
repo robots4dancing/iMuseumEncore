@@ -52,6 +52,7 @@
                                         <connections>
                                             <outlet property="museumAddressLabel" destination="Eg1-7M-Ey5" id="MZF-GF-cys"/>
                                             <outlet property="museumNameLabel" destination="CgN-S2-RZg" id="lD0-YS-ScX"/>
+                                            <segue destination="peC-8I-gAQ" kind="show" identifier="segueSpecific" id="DgW-NT-kxf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -167,4 +168,7 @@
         <image name="TabBarMapIcon" width="65" height="65"/>
         <image name="TabBarTableIcon" width="65" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DgW-NT-kxf"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -12,12 +12,23 @@ class ViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var masterMuseumArray = [Museum]()
+    var currentMuseum :Museum?
 //    var museumSearchResult = [Museum]()
     
     @IBOutlet var museumTableView       :UITableView!
 //    @IBOutlet var searchBar             :UISearchBar!
     
     //MARK: - Interactivity Methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueSpecific" {
+            let indexPath = museumTableView.indexPathForSelectedRow!
+            let currentMuseum = masterMuseumArray[indexPath.row]
+            let destVC = segue.destination as! MapViewController
+            destVC.currentMuseum = currentMuseum
+            museumTableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
     
     func updateScreen(_ notification: Notification) {
             masterMuseumArray = appDelegate.masterMuseumArray
@@ -30,7 +41,6 @@ class ViewController: UIViewController {
         //        }
         //        if reach.isReachable {
         appDelegate.getFile()
-        museumTableView.reloadData()
         //        } else {
         //            print("Host Not Reachable. Turn on the Internet")
         //        }
@@ -70,6 +80,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+//http://stackoverflow.com/questions/30541010/how-to-reload-data-in-a-tableview-from-a-different-viewcontroller-in-swift
 
 extension Notification.Name {
     static let reload = Notification.Name("reload")
