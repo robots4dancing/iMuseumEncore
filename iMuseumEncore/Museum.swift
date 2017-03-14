@@ -15,19 +15,22 @@ class Museum: NSObject {
     var museumCity      :String!
     var museumState     :String!
     var museumZip       :String!
+    var museumLon       :Double!
+    var museumLat       :Double!
     
     var museumFullAddress :String! {
         return "\(museumStreet!), \(museumCity!), \(museumState!) \(museumZip!)"
     }
     
-    init(museumName: String, museumStreet: String, museumCity: String, museumState: String, museumZip: String) {
+    init(museumName: String, museumStreet: String, museumCity: String, museumState: String, museumZip: String, museumLon: Double, museumLat: Double) {
         
         self.museumName = museumName
         self.museumStreet = museumStreet
         self.museumCity = museumCity
         self.museumState = museumState
         self.museumZip = museumZip
-        
+        self.museumLon = museumLon
+        self.museumLat = museumLat
     }
     
 }
