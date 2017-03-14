@@ -13,8 +13,9 @@
 		4BFB63BD1E78086700A398E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BFB63BC1E78086700A398E1 /* Assets.xcassets */; };
 		4BFB63C01E78086700A398E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BFB63BE1E78086700A398E1 /* LaunchScreen.storyboard */; };
 		4BFB63C81E78090700A398E1 /* Museum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB63C71E78090700A398E1 /* Museum.swift */; };
-		4BFB63CA1E78096700A398E1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB63C91E78096700A398E1 /* Reachability.swift */; };
 		4BFB63CC1E7809E700A398E1 /* MuseumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB63CB1E7809E700A398E1 /* MuseumTableViewCell.swift */; };
+		4BFB63CF1E7819D000A398E1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFB63CE1E7819D000A398E1 /* MapKit.framework */; };
+		4BFB63D11E781C4000A398E1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB63D01E781C4000A398E1 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,9 @@
 		4BFB63BF1E78086700A398E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BFB63C11E78086700A398E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BFB63C71E78090700A398E1 /* Museum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Museum.swift; sourceTree = "<group>"; };
-		4BFB63C91E78096700A398E1 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		4BFB63CB1E7809E700A398E1 /* MuseumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuseumTableViewCell.swift; sourceTree = "<group>"; };
+		4BFB63CE1E7819D000A398E1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4BFB63D01E781C4000A398E1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BFB63CF1E7819D000A398E1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				4BFB63B41E78086600A398E1 /* iMuseumEncore */,
 				4BFB63B31E78086600A398E1 /* Products */,
+				4BFB63CD1E7819D000A398E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,15 +66,23 @@
 			children = (
 				4BFB63B51E78086600A398E1 /* AppDelegate.swift */,
 				4BFB63B71E78086600A398E1 /* ViewController.swift */,
+				4BFB63D01E781C4000A398E1 /* MapViewController.swift */,
 				4BFB63C71E78090700A398E1 /* Museum.swift */,
 				4BFB63CB1E7809E700A398E1 /* MuseumTableViewCell.swift */,
-				4BFB63C91E78096700A398E1 /* Reachability.swift */,
 				4BFB63B91E78086600A398E1 /* Main.storyboard */,
 				4BFB63BC1E78086700A398E1 /* Assets.xcassets */,
 				4BFB63BE1E78086700A398E1 /* LaunchScreen.storyboard */,
 				4BFB63C11E78086700A398E1 /* Info.plist */,
 			);
 			path = iMuseumEncore;
+			sourceTree = "<group>";
+		};
+		4BFB63CD1E7819D000A398E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BFB63CE1E7819D000A398E1 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +118,11 @@
 					4BFB63B11E78086500A398E1 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -148,7 +165,7 @@
 				4BFB63B81E78086600A398E1 /* ViewController.swift in Sources */,
 				4BFB63B61E78086600A398E1 /* AppDelegate.swift in Sources */,
 				4BFB63CC1E7809E700A398E1 /* MuseumTableViewCell.swift in Sources */,
-				4BFB63CA1E78096700A398E1 /* Reachability.swift in Sources */,
+				4BFB63D11E781C4000A398E1 /* MapViewController.swift in Sources */,
 				4BFB63C81E78090700A398E1 /* Museum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +328,7 @@
 				4BFB63C61E78086700A398E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
